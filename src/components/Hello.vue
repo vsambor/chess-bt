@@ -1,21 +1,27 @@
 <template>
-  <div class="hello">
-    <chessboard @onMove="showInfo" :fen="'8/p1r3k1/1n3pp1/1p3p1q/3Q3p/1P1N1R1P/P5PK/8 w - - 0 1'"/>
+  <div>
+    <h1>{{ $t("fr") }}: {{ msg }}</h1>
+    <br>
+    <v-btn class="success">Test</v-btn>
   </div>
 </template>
 
 <script>
-import { chessboard } from 'vue-chessboard'
-import 'vue-chessboard/dist/vue-chessboard.css'
+import { CHAHGE_STATE } from '../store'
 
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js PWA'
+      msg: 'Welcome to CHESS Vue.js PWA'
     }
   },
-  components: { chessboard },
+  components: {},
+  mounted () {
+    console.log('Mounted: ' + this.$store.getters.testState)
+    this.$store.commit(CHAHGE_STATE, 3)
+    console.log('Mounted: ' + this.$store.getters.testState)
+  },
   methods: {
     showInfo (info) {
       console.log(info)
