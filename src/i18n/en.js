@@ -3,5 +3,7 @@ module.exports = {
   fr: 'French',
   ok: 'OK',
   yes: 'Yes',
-  no: 'No'
+  no: 'No',
+  app_name: 'Chess Blindfold Tactics',
+  rights_reserved: 'All rights reserved'
 }

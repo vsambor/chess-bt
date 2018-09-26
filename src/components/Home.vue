@@ -10,12 +10,9 @@
 import { CHAHGE_STATE } from '../store'
 
 export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to CHESS Vue.js PWA'
-    }
-  },
+  data: () => ({
+    msg: 'Welcome to CHESS Vue.js PWA'
+  }),
   components: {},
   mounted () {
     console.log('Mounted: ' + this.$store.getters.testState)

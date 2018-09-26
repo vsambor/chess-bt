@@ -1,43 +1,28 @@
 <template>
   <v-app id="app" dark>
-    <v-navigation-drawer v-model="drawer" clipped fixed app>
-      <v-list dense>
-      <v-list-tile @click="">
-        <v-list-tile-action>
-            <v-icon>dashboard</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Dashboard</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>settings</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Settings</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar app fixed clipped-left>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Chess Blindfold Tactics</v-toolbar-title>
-    </v-toolbar>
+    <left-sider :drawer.sync="drawer"/>
+    <navbar :drawer.sync="drawer" />
     <v-content>
         <router-view></router-view>
     </v-content>
-    <v-footer app fixed>
-      <span>&copy; 2018</span>
-    </v-footer>
+    <app-footer/>
   </v-app>
 </template>
 
 <script>
+import AppFooter from './components/core/Footer'
+import LeftSider from './components/core/LeftSider'
+import Navbar from './components/core/Navbar'
+
 export default {
   name: 'app',
   data: () => ({
     drawer: true
-  })
+  }),
+  components: {
+    LeftSider,
+    Navbar,
+    AppFooter
+  }
 }
 </script>
