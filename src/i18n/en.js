@@ -5,5 +5,7 @@ module.exports = {
   yes: 'Yes',
   no: 'No',
   app_name: 'Chess Blindfold Tactics',
-  rights_reserved: 'All rights reserved'
+  rights_reserved: 'All rights reserved',
+  next_puzzle: 'Next Puzzle',
+  see_solution: 'See Solution'
 }
