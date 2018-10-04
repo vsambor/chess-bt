@@ -17,7 +17,7 @@
 import { CHAHGE_STATE } from '../store'
 import {chessboard} from 'vue-chessboard'
 import 'vue-chessboard/dist/vue-chessboard.css'
-import fenService from './services/fen'
+import fenService from '../services/fen'
 
 export default {
   data: () => ({
